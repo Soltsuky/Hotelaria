@@ -68,6 +68,7 @@ namespace Hotelaria.Cadastros
             this.txtBuscarNome.Name = "txtBuscarNome";
             this.txtBuscarNome.Size = new System.Drawing.Size(139, 20);
             this.txtBuscarNome.TabIndex = 50;
+            this.txtBuscarNome.TextChanged += new System.EventHandler(this.txtBuscarNome_TextChanged);
             // 
             // txtNome
             // 
@@ -172,16 +173,16 @@ namespace Hotelaria.Cadastros
             this.grid.Size = new System.Drawing.Size(650, 130);
             this.grid.TabIndex = 60;
             this.grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellClick);
-            this.grid.Click += new System.EventHandler(this.grid_Click);
             // 
             // txtBuscarCPF
             // 
-            this.txtBuscarCPF.Location = new System.Drawing.Point(537, 36);
+            this.txtBuscarCPF.Location = new System.Drawing.Point(537, 10);
             this.txtBuscarCPF.Mask = "000,000,000-00";
             this.txtBuscarCPF.Name = "txtBuscarCPF";
             this.txtBuscarCPF.Size = new System.Drawing.Size(139, 20);
             this.txtBuscarCPF.TabIndex = 61;
             this.txtBuscarCPF.Visible = false;
+            this.txtBuscarCPF.TextChanged += new System.EventHandler(this.txtBuscarCPF_TextChanged);
             // 
             // rbNome
             // 

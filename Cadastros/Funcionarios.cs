@@ -39,6 +39,43 @@ namespace Hotelaria.Cadastros
 
         }
 
+        private void BuscarNome()
+        {
+
+            con.AbrirCon();
+            sql = "SELECT * FROM funcionarios where nome LIKE @nome order by nome asc";
+            cmd = new SqlCommand(sql, con.con);
+            cmd.Parameters.AddWithValue("@nome", txtBuscarNome.Text + "%");
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = cmd;
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            grid.DataSource = dt;
+            con.FecharCon();
+
+            FormatarDG();
+
+        }
+
+        private void BuscarCPF()
+        {
+
+            con.AbrirCon();
+            sql = "SELECT * FROM funcionarios where cpf = @cpf order by nome asc";
+            cmd = new SqlCommand(sql, con.con);
+            cmd.Parameters.AddWithValue("@cpf", txtBuscarCPF.Text);
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = cmd;
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            grid.DataSource = dt;
+            con.FecharCon();
+
+            FormatarDG();
+
+        }
+
+
         private void FormatarDG()
         {
             grid.Columns[0].HeaderText = "ID";
@@ -168,6 +205,25 @@ namespace Hotelaria.Cadastros
             cmd.Parameters.AddWithValue("@endereco", txtEndereco.Text);
             cmd.Parameters.AddWithValue("@telefone", txtTelefone.Text);
             cmd.Parameters.AddWithValue("@cargo", cbCargo.Text);
+
+            //Verificar se o CPF já existe
+
+            SqlCommand cmdVerificacao;
+
+            cmdVerificacao = new SqlCommand("SELECT * FROM funcionarios where cpf = @cpf", con.con);
+            cmdVerificacao.Parameters.AddWithValue("@cpf", txtCPF.Text);
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = cmdVerificacao;
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                MessageBox.Show("CPF já Registrado!", "CPF Não Salvo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtCPF.Text = "";
+                txtCPF.Focus();
+                return;
+            }
+
             cmd.ExecuteNonQuery();
             con.FecharCon();
             listar();
@@ -177,12 +233,9 @@ namespace Hotelaria.Cadastros
             btnSalvar.Enabled = false;
             limparCampos();
             desabilitarCampos();
+            listar();
         }
 
-        private void grid_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
@@ -244,8 +297,9 @@ namespace Hotelaria.Cadastros
                 btnNovo.Enabled = true;
                 btnEditar.Enabled = false;
                 btnDeletar.Enabled = false;
-                txtNome.Text = "";
+                limparCampos();
                 txtNome.Enabled = false;
+                listar();
             }
         }
 
@@ -265,6 +319,25 @@ namespace Hotelaria.Cadastros
             cbCargo.Text = grid.CurrentRow.Cells[5].Value.ToString();
 
 
+        }
+
+        private void txtBuscarNome_TextChanged(object sender, EventArgs e)
+        {
+            BuscarNome();
+        }
+
+
+        private void txtBuscarCPF_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBuscarCPF.Text == "   .   .   -")
+            {
+                listar();
+            }
+            else
+            {
+                BuscarCPF();
+            }
+            
         }
     }
 }

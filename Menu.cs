@@ -31,5 +31,12 @@ namespace Hotelaria
             Cadastros.frmCargo form = new Cadastros.frmCargo();
             form.Show();
         }
+
+        private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Cadastros.frmUsuario form = new Cadastros.frmUsuario();
+            form.Show();
+
+        }
     }
 }

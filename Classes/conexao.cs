@@ -39,6 +39,12 @@ namespace Hotelaria.Classes
 
         }
 
+        //Variaveis Globais
+
+        public  string nomeUsuario;
+        public  string cargoUsuario;
+
+
 
     }
 }

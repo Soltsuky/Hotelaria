@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,8 +11,14 @@ using System.Windows.Forms;
 
 namespace Hotelaria
 {
+
     public partial class FormLogin : Form
     {
+
+        Classes.conexao con = new Classes.conexao();
+        string sql;
+        SqlCommand cmd;
+        string id;
         public FormLogin()
         {
             InitializeComponent();
@@ -42,10 +49,48 @@ namespace Hotelaria
 
             //Código de login
 
-            frmMenu form = new frmMenu();
-            this.Hide();
-           // Limpar();
-            form.Show();
+            con.AbrirCon();
+            SqlCommand cmdVerificacao;
+            SqlDataReader reader;
+
+            cmdVerificacao = new SqlCommand("SELECT * FROM usuarios where usuario = @usuario and senha = @senha", con.con);
+            cmdVerificacao.Parameters.AddWithValue("@usuario", txtLogin.Text);
+            cmdVerificacao.Parameters.AddWithValue("@senha", txtSenha.Text);
+            reader = cmdVerificacao.ExecuteReader();
+
+
+
+            if (reader.HasRows)
+            {
+
+                //Extraindo informações do reader
+                while (reader.Read())
+                {
+
+                    con.nomeUsuario = Convert.ToString(reader["nome"]);
+                    con.cargoUsuario = Convert.ToString(reader["cargo"]);
+
+                  //  MessageBox.Show(con.nomeUsuario);
+
+                }
+
+             //   MessageBox.Show("Bem Vindo!" + con.nomeUsuario, "Login Efetuado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                frmMenu form = new frmMenu();
+                this.Hide();
+                // Limpar();
+                form.Show();
+                
+            }
+            else
+            {
+                MessageBox.Show("Erro ao Logar", "Dados Incorretos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtLogin.Text = "";
+                txtLogin.Focus();
+                txtSenha.Text = "";
+                
+            }
+
+            con.FecharCon();
 
 
         }

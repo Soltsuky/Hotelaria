@@ -107,39 +107,39 @@ namespace Hotelaria
             // funcionáToolStripMenuItem
             // 
             this.funcionáToolStripMenuItem.Name = "funcionáToolStripMenuItem";
-            this.funcionáToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.funcionáToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.funcionáToolStripMenuItem.Text = "Funcionários";
             this.funcionáToolStripMenuItem.Click += new System.EventHandler(this.funcionáToolStripMenuItem_Click);
             // 
             // funcionáriosToolStripMenuItem
             // 
             this.funcionáriosToolStripMenuItem.Name = "funcionáriosToolStripMenuItem";
-            this.funcionáriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.funcionáriosToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.funcionáriosToolStripMenuItem.Text = "Hóspedes";
             // 
             // quartosToolStripMenuItem
             // 
             this.quartosToolStripMenuItem.Name = "quartosToolStripMenuItem";
-            this.quartosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quartosToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.quartosToolStripMenuItem.Text = "Quartos";
             // 
             // usuáriosToolStripMenuItem
             // 
             this.usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
-            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.usuáriosToolStripMenuItem.Text = "Usuários";
             this.usuáriosToolStripMenuItem.Click += new System.EventHandler(this.usuáriosToolStripMenuItem_Click);
             // 
             // serviçosToolStripMenuItem
             // 
             this.serviçosToolStripMenuItem.Name = "serviçosToolStripMenuItem";
-            this.serviçosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.serviçosToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.serviçosToolStripMenuItem.Text = "Serviços";
             // 
             // cargoToolStripMenuItem
             // 
             this.cargoToolStripMenuItem.Name = "cargoToolStripMenuItem";
-            this.cargoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cargoToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.cargoToolStripMenuItem.Text = "Cargo";
             this.cargoToolStripMenuItem.Click += new System.EventHandler(this.cargoToolStripMenuItem_Click);
             // 
@@ -243,9 +243,9 @@ namespace Hotelaria
             this.pnlTop.Controls.Add(this.button3);
             this.pnlTop.Controls.Add(this.button2);
             this.pnlTop.Controls.Add(this.button1);
-            this.pnlTop.Location = new System.Drawing.Point(10, 23);
+            this.pnlTop.Location = new System.Drawing.Point(0, 23);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(570, 75);
+            this.pnlTop.Size = new System.Drawing.Size(621, 75);
             this.pnlTop.TabIndex = 1;
             // 
             // button7
@@ -254,7 +254,7 @@ namespace Hotelaria
             this.button7.FlatAppearance.BorderSize = 0;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.Location = new System.Drawing.Point(502, 4);
+            this.button7.Location = new System.Drawing.Point(509, 4);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(65, 65);
             this.button7.TabIndex = 6;
@@ -266,7 +266,7 @@ namespace Hotelaria
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(421, 4);
+            this.button6.Location = new System.Drawing.Point(426, 4);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(65, 65);
             this.button6.TabIndex = 5;
@@ -278,7 +278,7 @@ namespace Hotelaria
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(339, 3);
+            this.button5.Location = new System.Drawing.Point(346, 3);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(65, 65);
             this.button5.TabIndex = 4;
@@ -290,7 +290,7 @@ namespace Hotelaria
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(259, 3);
+            this.button4.Location = new System.Drawing.Point(263, 3);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(65, 65);
             this.button4.TabIndex = 3;
@@ -302,7 +302,7 @@ namespace Hotelaria
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(175, 3);
+            this.button3.Location = new System.Drawing.Point(179, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(65, 65);
             this.button3.TabIndex = 2;
@@ -349,7 +349,7 @@ namespace Hotelaria
             this.pnlRight.Controls.Add(this.label1);
             this.pnlRight.Location = new System.Drawing.Point(618, 23);
             this.pnlRight.Name = "pnlRight";
-            this.pnlRight.Size = new System.Drawing.Size(200, 411);
+            this.pnlRight.Size = new System.Drawing.Size(200, 458);
             this.pnlRight.TabIndex = 2;
             // 
             // label10
@@ -416,7 +416,7 @@ namespace Hotelaria
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label4.Location = new System.Drawing.Point(9, 123);
+            this.label4.Location = new System.Drawing.Point(9, 132);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 20);
             this.label4.TabIndex = 3;

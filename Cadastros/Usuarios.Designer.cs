@@ -60,6 +60,7 @@ namespace Hotelaria.Cadastros
             this.btnDeletar.Size = new System.Drawing.Size(65, 65);
             this.btnDeletar.TabIndex = 87;
             this.btnDeletar.UseVisualStyleBackColor = true;
+            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
             // 
             // btnEditar
             // 
@@ -159,6 +160,7 @@ namespace Hotelaria.Cadastros
             this.txtBuscarNome.Name = "txtBuscarNome";
             this.txtBuscarNome.Size = new System.Drawing.Size(139, 20);
             this.txtBuscarNome.TabIndex = 74;
+            this.txtBuscarNome.TextChanged += new System.EventHandler(this.txtBuscarNome_TextChanged);
             // 
             // label1
             // 

@@ -17,6 +17,7 @@ namespace Hotelaria.Cadastros
         SqlCommand cmd;
         string id;
 
+        string cpfAntigo;
         public frmFuncionarios()
         {
             InitializeComponent();
@@ -267,6 +268,31 @@ namespace Hotelaria.Cadastros
             cmd.Parameters.AddWithValue("@telefone", txtTelefone.Text);
             cmd.Parameters.AddWithValue("@cargo", cbCargo.Text);
             cmd.Parameters.AddWithValue("@id", id);
+
+            //Verificar se o CPF já existe
+
+            if(txtCPF.Text != cpfAntigo) 
+            {
+
+                SqlCommand cmdVerificacao;
+
+                cmdVerificacao = new SqlCommand("SELECT * FROM funcionarios where cpf = @cpf", con.con);
+                cmdVerificacao.Parameters.AddWithValue("@cpf", txtCPF.Text);
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmdVerificacao;
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    MessageBox.Show("CPF já Registrado!", "CPF Não Salvo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtCPF.Text = "";
+                    txtCPF.Focus();
+                    return;
+                }
+
+            }
+
+
             cmd.ExecuteNonQuery();
             con.FecharCon();
 
@@ -306,6 +332,8 @@ namespace Hotelaria.Cadastros
         private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
+            
+
             btnEditar.Enabled = true;
             btnDeletar.Enabled = true;
             btnSalvar.Enabled = false;
@@ -317,6 +345,9 @@ namespace Hotelaria.Cadastros
             txtEndereco.Text = grid.CurrentRow.Cells[3].Value.ToString();
             txtTelefone.Text = grid.CurrentRow.Cells[4].Value.ToString();
             cbCargo.Text = grid.CurrentRow.Cells[5].Value.ToString();
+
+            cpfAntigo = grid.CurrentRow.Cells[2].Value.ToString();
+
 
 
         }

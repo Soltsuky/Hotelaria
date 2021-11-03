@@ -18,7 +18,7 @@ namespace Hotelaria.Cadastros
         SqlCommand cmd;
         string id;
 
-
+        string usuarioAntigo;
         public frmUsuario()
         {
             InitializeComponent();
@@ -220,6 +220,8 @@ namespace Hotelaria.Cadastros
             cbCargo.Text = grid.CurrentRow.Cells[2].Value.ToString();
             txtUsuario.Text = grid.CurrentRow.Cells[3].Value.ToString();
             txtSenha.Text = grid.CurrentRow.Cells[4].Value.ToString();
+
+            usuarioAntigo = grid.CurrentRow.Cells[3].Value.ToString();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -259,7 +261,7 @@ namespace Hotelaria.Cadastros
 
             // Codigo para editar
             con.AbrirCon();
-            sql = "UPDATE usuario SET nome = @nome, cargo = @cargo, usuario = @usuario, senha = @senha, where id = @id";
+            sql = "UPDATE usuarios SET nome = @nome, cargo = @cargo, usuario = @usuario, senha = @senha where id = @id";
             cmd = new SqlCommand(sql, con.con);
             cmd.Parameters.AddWithValue("@nome", txtNome.Text);
             cmd.Parameters.AddWithValue("@cargo", cbCargo.Text);
@@ -267,21 +269,29 @@ namespace Hotelaria.Cadastros
             cmd.Parameters.AddWithValue("@senha", txtSenha.Text);
             cmd.Parameters.AddWithValue("@id", id);
 
-            SqlCommand cmdVerificacao;
+            //Verificar se o CPF já existe
 
-            cmdVerificacao = new SqlCommand("SELECT * FROM usuarios where usuario = @usuario", con.con);
-            cmdVerificacao.Parameters.AddWithValue("@usuario", txtUsuario.Text);
-            SqlDataAdapter da = new SqlDataAdapter();
-            da.SelectCommand = cmdVerificacao;
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            if (dt.Rows.Count > 0)
+            if (txtUsuario.Text != usuarioAntigo)
             {
-                MessageBox.Show("Usuario já Registrado!", "Dados Não Salvo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtUsuario.Text = "";
-                txtUsuario.Focus();
-                return;
+
+                SqlCommand cmdVerificacao;
+
+                cmdVerificacao = new SqlCommand("SELECT * FROM usuarios where usuario = @usuario", con.con);
+                cmdVerificacao.Parameters.AddWithValue("@usuario", txtUsuario.Text);
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmdVerificacao;
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    MessageBox.Show("Usuário já Registrado!", "Usuário Não Salvo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtUsuario.Text = "";
+                    txtUsuario.Focus();
+                    return;
+                }
+
             }
+
 
             cmd.ExecuteNonQuery();
             con.FecharCon();
@@ -292,6 +302,36 @@ namespace Hotelaria.Cadastros
             limparCampos();
             desabilitarCampos();
             listar();
+        }
+
+        private void btnDeletar_Click(object sender, EventArgs e)
+        {
+            var resultado = MessageBox.Show("Tem certeza que quer Excluir o Registro", "Excluir Registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+
+                //Codigo de excluir
+                con.AbrirCon();
+                sql = "DELETE FROM usuarios where id = @id";
+                cmd = new SqlCommand(sql, con.con);
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.ExecuteNonQuery();
+                con.FecharCon();
+
+                MessageBox.Show("Registro Excluido!");
+                btnNovo.Enabled = true;
+                btnEditar.Enabled = false;
+                btnDeletar.Enabled = false;
+                limparCampos();
+                txtNome.Enabled = false;
+                listar();
+            }
+        }
+
+        private void txtBuscarNome_TextChanged(object sender, EventArgs e)
+        {
+            BuscarNome();
         }
     }
 }

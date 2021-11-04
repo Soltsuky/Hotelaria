@@ -69,6 +69,8 @@ namespace Hotelaria
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.lblCargo = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.pnlTop.SuspendLayout();
             this.pnlRight.SuspendLayout();
@@ -337,6 +339,8 @@ namespace Hotelaria
             this.pnlRight.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlRight.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlRight.Controls.Add(this.lblUsuario);
+            this.pnlRight.Controls.Add(this.lblCargo);
             this.pnlRight.Controls.Add(this.label10);
             this.pnlRight.Controls.Add(this.label9);
             this.pnlRight.Controls.Add(this.label6);
@@ -452,6 +456,26 @@ namespace Hotelaria
             this.label1.TabIndex = 0;
             this.label1.Text = "Data:";
             // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.lblUsuario.Location = new System.Drawing.Point(82, 92);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(57, 20);
+            this.lblUsuario.TabIndex = 11;
+            this.lblUsuario.Text = "usuario";
+            // 
+            // lblCargo
+            // 
+            this.lblCargo.AutoSize = true;
+            this.lblCargo.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.lblCargo.Location = new System.Drawing.Point(82, 132);
+            this.lblCargo.Name = "lblCargo";
+            this.lblCargo.Size = new System.Drawing.Size(47, 20);
+            this.lblCargo.TabIndex = 10;
+            this.lblCargo.Text = "cargo";
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -519,5 +543,7 @@ namespace Hotelaria
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ToolStripMenuItem cargoToolStripMenuItem;
+        private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Label lblCargo;
     }
 }

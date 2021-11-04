@@ -74,7 +74,7 @@ namespace Hotelaria
 
                 }
 
-             //   MessageBox.Show("Bem Vindo!" + con.nomeUsuario, "Login Efetuado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+              //  MessageBox.Show("Bem Vindo! " + con.nomeUsuario, "Login Efetuado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 frmMenu form = new frmMenu();
                 this.Hide();
                 // Limpar();

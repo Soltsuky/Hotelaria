@@ -10,6 +10,8 @@ namespace Hotelaria
 {
     public partial class frmMenu : Form
     {
+
+        Classes.conexao con = new Classes.conexao();
         public frmMenu()
         {
             InitializeComponent();
@@ -18,6 +20,9 @@ namespace Hotelaria
         private void frmMenu_Load(object sender, EventArgs e)
         {
             pnlTop.BackColor = Color.FromArgb(213, 213, 213);
+
+
+
         }
 
         private void funcionáToolStripMenuItem_Click(object sender, EventArgs e)

@@ -8,6 +8,13 @@ namespace Hotelaria
 {
     static class Program
     {
+
+        //Variaveis Globais do sistema
+
+        public static string nomeUsuario;
+        public static string cargoUsuario;
+
+
         /// <summary>
         /// Ponto de entrada principal para o aplicativo.
         /// </summary>

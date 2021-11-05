@@ -22,7 +22,8 @@ namespace Hotelaria
             pnlTop.BackColor = Color.FromArgb(213, 213, 213);
 
 
-
+            lblUsuario.Text = Program.nomeUsuario;
+            lblCargo.Text = Program.cargoUsuario;
         }
 
         private void funcionáToolStripMenuItem_Click(object sender, EventArgs e)
@@ -40,6 +41,21 @@ namespace Hotelaria
         private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Cadastros.frmUsuario form = new Cadastros.frmUsuario();
+            form.Show();
+
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormLogin form = new FormLogin();
+            this.Close();
+            // Limpar();
+            form.Show();
+        }
+
+        private void serviçosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Cadastros.frmServicos form = new Cadastros.frmServicos();
             form.Show();
 
         }

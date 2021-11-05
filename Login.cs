@@ -67,8 +67,8 @@ namespace Hotelaria
                 while (reader.Read())
                 {
 
-                    con.nomeUsuario = Convert.ToString(reader["nome"]);
-                    con.cargoUsuario = Convert.ToString(reader["cargo"]);
+                    Program.nomeUsuario = Convert.ToString(reader["nome"]);
+                    Program.cargoUsuario = Convert.ToString(reader["cargo"]);
 
                   //  MessageBox.Show(con.nomeUsuario);
 

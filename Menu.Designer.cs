@@ -59,6 +59,8 @@ namespace Hotelaria
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pnlRight = new System.Windows.Forms.Panel();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.lblCargo = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -69,8 +71,6 @@ namespace Hotelaria
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblUsuario = new System.Windows.Forms.Label();
-            this.lblCargo = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.pnlTop.SuspendLayout();
             this.pnlRight.SuspendLayout();
@@ -109,39 +109,40 @@ namespace Hotelaria
             // funcionáToolStripMenuItem
             // 
             this.funcionáToolStripMenuItem.Name = "funcionáToolStripMenuItem";
-            this.funcionáToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.funcionáToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.funcionáToolStripMenuItem.Text = "Funcionários";
             this.funcionáToolStripMenuItem.Click += new System.EventHandler(this.funcionáToolStripMenuItem_Click);
             // 
             // funcionáriosToolStripMenuItem
             // 
             this.funcionáriosToolStripMenuItem.Name = "funcionáriosToolStripMenuItem";
-            this.funcionáriosToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.funcionáriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.funcionáriosToolStripMenuItem.Text = "Hóspedes";
             // 
             // quartosToolStripMenuItem
             // 
             this.quartosToolStripMenuItem.Name = "quartosToolStripMenuItem";
-            this.quartosToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.quartosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.quartosToolStripMenuItem.Text = "Quartos";
             // 
             // usuáriosToolStripMenuItem
             // 
             this.usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
-            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.usuáriosToolStripMenuItem.Text = "Usuários";
             this.usuáriosToolStripMenuItem.Click += new System.EventHandler(this.usuáriosToolStripMenuItem_Click);
             // 
             // serviçosToolStripMenuItem
             // 
             this.serviçosToolStripMenuItem.Name = "serviçosToolStripMenuItem";
-            this.serviçosToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.serviçosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.serviçosToolStripMenuItem.Text = "Serviços";
+            this.serviçosToolStripMenuItem.Click += new System.EventHandler(this.serviçosToolStripMenuItem_Click);
             // 
             // cargoToolStripMenuItem
             // 
             this.cargoToolStripMenuItem.Name = "cargoToolStripMenuItem";
-            this.cargoToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.cargoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cargoToolStripMenuItem.Text = "Cargo";
             this.cargoToolStripMenuItem.Click += new System.EventHandler(this.cargoToolStripMenuItem_Click);
             // 
@@ -159,19 +160,19 @@ namespace Hotelaria
             // novaReservaToolStripMenuItem
             // 
             this.novaReservaToolStripMenuItem.Name = "novaReservaToolStripMenuItem";
-            this.novaReservaToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.novaReservaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.novaReservaToolStripMenuItem.Text = "Nova Reserva";
             // 
             // quadoDeReservaToolStripMenuItem
             // 
             this.quadoDeReservaToolStripMenuItem.Name = "quadoDeReservaToolStripMenuItem";
-            this.quadoDeReservaToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.quadoDeReservaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.quadoDeReservaToolStripMenuItem.Text = "Quado de Reserva";
             // 
             // consultarReservasToolStripMenuItem
             // 
             this.consultarReservasToolStripMenuItem.Name = "consultarReservasToolStripMenuItem";
-            this.consultarReservasToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.consultarReservasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.consultarReservasToolStripMenuItem.Text = "Consultar Reservas";
             // 
             // movimentaçõesToolStripMenuItem
@@ -186,7 +187,7 @@ namespace Hotelaria
             // novaServiçosToolStripMenuItem
             // 
             this.novaServiçosToolStripMenuItem.Name = "novaServiçosToolStripMenuItem";
-            this.novaServiçosToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.novaServiçosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.novaServiçosToolStripMenuItem.Text = "Novo Serviços";
             // 
             // relatóriosToolStripMenuItem
@@ -202,13 +203,13 @@ namespace Hotelaria
             // checkInToolStripMenuItem
             // 
             this.checkInToolStripMenuItem.Name = "checkInToolStripMenuItem";
-            this.checkInToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.checkInToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.checkInToolStripMenuItem.Text = "Check In";
             // 
             // checkOutToolStripMenuItem
             // 
             this.checkOutToolStripMenuItem.Name = "checkOutToolStripMenuItem";
-            this.checkOutToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.checkOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.checkOutToolStripMenuItem.Text = "Check Out";
             // 
             // sairToolStripMenuItem
@@ -230,8 +231,9 @@ namespace Hotelaria
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // pnlTop
             // 
@@ -356,6 +358,26 @@ namespace Hotelaria
             this.pnlRight.Size = new System.Drawing.Size(200, 458);
             this.pnlRight.TabIndex = 2;
             // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.lblUsuario.Location = new System.Drawing.Point(74, 92);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(57, 20);
+            this.lblUsuario.TabIndex = 11;
+            this.lblUsuario.Text = "usuario";
+            // 
+            // lblCargo
+            // 
+            this.lblCargo.AutoSize = true;
+            this.lblCargo.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.lblCargo.Location = new System.Drawing.Point(64, 132);
+            this.lblCargo.Name = "lblCargo";
+            this.lblCargo.Size = new System.Drawing.Size(47, 20);
+            this.lblCargo.TabIndex = 10;
+            this.lblCargo.Text = "cargo";
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -455,26 +477,6 @@ namespace Hotelaria
             this.label1.Size = new System.Drawing.Size(44, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Data:";
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.lblUsuario.Location = new System.Drawing.Point(82, 92);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(57, 20);
-            this.lblUsuario.TabIndex = 11;
-            this.lblUsuario.Text = "usuario";
-            // 
-            // lblCargo
-            // 
-            this.lblCargo.AutoSize = true;
-            this.lblCargo.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.lblCargo.Location = new System.Drawing.Point(82, 132);
-            this.lblCargo.Name = "lblCargo";
-            this.lblCargo.Size = new System.Drawing.Size(47, 20);
-            this.lblCargo.TabIndex = 10;
-            this.lblCargo.Text = "cargo";
             // 
             // frmMenu
             // 

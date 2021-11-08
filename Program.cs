@@ -14,6 +14,14 @@ namespace Hotelaria
         public static string nomeUsuario;
         public static string cargoUsuario;
 
+        public static string chamadaProdutos;
+
+        public static string nomeProduto;
+        public static string estoqueProduto;
+        public static string valorProduto;
+        public static string idProduto;
+
+        public static string idVenda;
 
         /// <summary>
         /// Ponto de entrada principal para o aplicativo.

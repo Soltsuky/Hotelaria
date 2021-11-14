@@ -31,16 +31,26 @@ namespace Hotelaria.Relatorios
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.prodFornBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hotelDataSet = new Hotelaria.HotelDataSet();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.produtosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.hotelDataSet = new Hotelaria.HotelDataSet();
             this.produtosTableAdapter = new Hotelaria.HotelDataSetTableAdapters.produtosTableAdapter();
-            this.prodFornBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.prod_FornTableAdapter = new Hotelaria.HotelDataSetTableAdapters.Prod_FornTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prodFornBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // prodFornBindingSource
+            // 
+            this.prodFornBindingSource.DataMember = "Prod_Forn";
+            this.prodFornBindingSource.DataSource = this.hotelDataSet;
+            // 
+            // hotelDataSet
+            // 
+            this.hotelDataSet.DataSetName = "HotelDataSet";
+            this.hotelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -52,7 +62,7 @@ namespace Hotelaria.Relatorios
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(643, 450);
+            this.reportViewer1.Size = new System.Drawing.Size(643, 599);
             this.reportViewer1.TabIndex = 0;
             // 
             // produtosBindingSource
@@ -60,19 +70,9 @@ namespace Hotelaria.Relatorios
             this.produtosBindingSource.DataMember = "produtos";
             this.produtosBindingSource.DataSource = this.hotelDataSet;
             // 
-            // hotelDataSet
-            // 
-            this.hotelDataSet.DataSetName = "HotelDataSet";
-            this.hotelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // produtosTableAdapter
             // 
             this.produtosTableAdapter.ClearBeforeFill = true;
-            // 
-            // prodFornBindingSource
-            // 
-            this.prodFornBindingSource.DataMember = "Prod_Forn";
-            this.prodFornBindingSource.DataSource = this.hotelDataSet;
             // 
             // prod_FornTableAdapter
             // 
@@ -82,15 +82,15 @@ namespace Hotelaria.Relatorios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(643, 450);
+            this.ClientSize = new System.Drawing.Size(643, 599);
             this.Controls.Add(this.reportViewer1);
             this.Name = "frmRelProdutos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Relatório de Produtos";
             this.Load += new System.EventHandler(this.frmRelProdutos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prodFornBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

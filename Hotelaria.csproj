@@ -82,6 +82,18 @@
     <Compile Include="Cadastros\Funcionarios.Designer.cs">
       <DependentUpon>Funcionarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cadastros\Hospedes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\Hospedes.designer.cs">
+      <DependentUpon>Hospedes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\Quartos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\Quartos.designer.cs">
+      <DependentUpon>Quartos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cadastros\Servicos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +130,24 @@
     <Compile Include="Movimentacoes\frmVendas.Designer.cs">
       <DependentUpon>frmVendas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Movimentacoes\Gastos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Gastos.designer.cs">
+      <DependentUpon>Gastos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Movimentacoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Movimentacoes.designer.cs">
+      <DependentUpon>Movimentacoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\NovoServicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\NovoServicos.designer.cs">
+      <DependentUpon>NovoServicos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Produtos\Estoque.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,11 +162,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relatorios\frmRelComprovante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\frmRelComprovante.Designer.cs">
+      <DependentUpon>frmRelComprovante.cs</DependentUpon>
+    </Compile>
     <Compile Include="Relatorios\frmRelProdutos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Relatorios\frmRelProdutos.Designer.cs">
       <DependentUpon>frmRelProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\frmRelVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\frmRelVendas.Designer.cs">
+      <DependentUpon>frmRelVendas.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Cadastros\Cargo.resx">
@@ -147,6 +189,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastros\Funcionarios.resx">
       <DependentUpon>Funcionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\Hospedes.resx">
+      <DependentUpon>Hospedes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\Quartos.resx">
+      <DependentUpon>Quartos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastros\Servicos.resx">
       <DependentUpon>Servicos.cs</DependentUpon>
@@ -162,6 +210,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentacoes\frmVendas.resx">
       <DependentUpon>frmVendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Gastos.resx">
+      <DependentUpon>Gastos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Movimentacoes.resx">
+      <DependentUpon>Movimentacoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\NovoServicos.resx">
+      <DependentUpon>NovoServicos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produtos\Estoque.resx">
       <DependentUpon>Estoque.cs</DependentUpon>
@@ -179,10 +236,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Relatorios\frmRelComprovante.resx">
+      <DependentUpon>frmRelComprovante.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\frmRelProdutos.resx">
       <DependentUpon>frmRelProdutos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\frmRelVendas.resx">
+      <DependentUpon>frmRelVendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\RelComprovante.rdlc" />
     <EmbeddedResource Include="Relatorios\RelProdutos.rdlc" />
+    <EmbeddedResource Include="Relatorios\RelVendas.rdlc" />
     <None Include="HotelDataSet.xsc">
       <DependentUpon>HotelDataSet.xsd</DependentUpon>
     </None>

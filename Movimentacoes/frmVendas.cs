@@ -63,6 +63,7 @@ namespace Hotelaria.Movimentacoes
             con.FecharCon();
 
             FormatarDGVendas();
+            gridDetalhes.Visible = false;
         }
 
 
@@ -180,6 +181,8 @@ namespace Hotelaria.Movimentacoes
         {
             Listar();
             desabilitarCampos();
+            totalVenda = "0";
+            dtBuscar.Value = DateTime.Today;
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -219,7 +222,7 @@ namespace Hotelaria.Movimentacoes
             SqlCommand cmdVerificar;
             SqlDataReader reader;
             con.AbrirCon();
-            cmdVerificar = new SqlCommand("SELECT id FROM vendas order by id desc LIMIT 1", con.con);
+            cmdVerificar = new SqlCommand("SELECT TOP 1 id FROM vendas order by id desc", con.con);
 
             reader = cmdVerificar.ExecuteReader();
 
@@ -230,7 +233,7 @@ namespace Hotelaria.Movimentacoes
                 {
                     ultimoIdVenda = Convert.ToString(reader["id"]);
 
-
+                    MessageBox.Show(ultimoIdVenda);
 
 
                 }
@@ -267,7 +270,7 @@ namespace Hotelaria.Movimentacoes
                 var resultado = MessageBox.Show("Deseja Realmente Cancelar a Venda?", "Excluir Registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (resultado == DialogResult.Yes)
                 {
-                    //CÓDIGO DO BOTÃO PARA EXCLUIR
+                    //CÓDIGO DO BOTÃO EXCLUIR
                     con.AbrirCon();
                     sql = "UPDATE vendas set status = @status where id = @id";
                     cmd = new SqlCommand(sql, con.con);
@@ -298,8 +301,8 @@ namespace Hotelaria.Movimentacoes
 
         private void BtnRel_Click(object sender, EventArgs e)
         {
-          //  Relatorios.FrmRelComprovante form = new Relatorios.FrmRelComprovante();
-          //  form.Show();
+            Relatorios.frmRelComprovante form = new Relatorios.frmRelComprovante();
+            form.Show();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -336,7 +339,7 @@ namespace Hotelaria.Movimentacoes
             cmd.ExecuteNonQuery();
             con.FecharCon();
 
-            //ABATER QUANTIDADE DO ESTOQUE
+            //REMOVER QUANTIDADE DO ESTOQUE
             con.AbrirCon();
             sql = "UPDATE produtos SET estoque = @estoque where id = @id";
             cmd = new SqlCommand(sql, con.con);
@@ -473,6 +476,21 @@ namespace Hotelaria.Movimentacoes
             btnFechar.Visible = false;
             totalVenda = "0";
             lblTotal.Text = "0";
+        }
+        private void grid_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            idVenda = grid.CurrentRow.Cells[0].Value.ToString();
+            Program.idVenda = grid.CurrentRow.Cells[0].Value.ToString();
+            totalVenda = grid.CurrentRow.Cells[1].Value.ToString();
+            lblTotal.Text = string.Format("{0:c2}", totalVenda);
+            BuscarDetalhesVenda();
+            btnFechar.Visible = true;
+            btnAdd.Enabled = true;
+            btnRemove.Enabled = true;
+            btnExcluir.Enabled = true;
+            exclusaoVenda = "1";
+            BtnRel.Enabled = true;
+
         }
     }
 }

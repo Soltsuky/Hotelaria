@@ -229,20 +229,20 @@ namespace Hotelaria
             // novaServiçosToolStripMenuItem
             // 
             this.novaServiçosToolStripMenuItem.Name = "novaServiçosToolStripMenuItem";
-            this.novaServiçosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.novaServiçosToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.novaServiçosToolStripMenuItem.Text = "Novo Serviços";
             // 
             // novaVendaToolStripMenuItem
             // 
             this.novaVendaToolStripMenuItem.Name = "novaVendaToolStripMenuItem";
-            this.novaVendaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.novaVendaToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.novaVendaToolStripMenuItem.Text = "Nova Venda";
             this.novaVendaToolStripMenuItem.Click += new System.EventHandler(this.novaVendaToolStripMenuItem_Click);
             // 
             // entradaESaídasToolStripMenuItem
             // 
             this.entradaESaídasToolStripMenuItem.Name = "entradaESaídasToolStripMenuItem";
-            this.entradaESaídasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.entradaESaídasToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.entradaESaídasToolStripMenuItem.Text = "Entrada e Saídas";
             // 
             // relatóriosToolStripMenuItem

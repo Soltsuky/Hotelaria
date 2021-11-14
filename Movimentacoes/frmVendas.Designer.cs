@@ -169,6 +169,7 @@ namespace Hotelaria.Movimentacoes
             this.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grid.Size = new System.Drawing.Size(560, 204);
             this.grid.TabIndex = 112;
+            this.grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellClick_1);
             // 
             // btnExcluir
             // 
@@ -305,6 +306,7 @@ namespace Hotelaria.Movimentacoes
             this.btnFechar.TabIndex = 128;
             this.btnFechar.Text = "x";
             this.btnFechar.UseVisualStyleBackColor = false;
+            this.btnFechar.Visible = false;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // frmVendas

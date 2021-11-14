@@ -95,5 +95,7 @@ namespace Hotelaria
             Movimentacoes.frmVendas form = new Movimentacoes.frmVendas();
             form.Show();
         }
+
+
     }
 }

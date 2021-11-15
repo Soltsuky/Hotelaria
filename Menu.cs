@@ -96,6 +96,34 @@ namespace Hotelaria
             form.Show();
         }
 
+        private void entradaESaídasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Movimentacoes.FrmMovimentacoes form = new Movimentacoes.FrmMovimentacoes();
+            form.Show();
+        }
 
+        private void gastosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Movimentacoes.FrmGastos form = new Movimentacoes.FrmGastos();
+            form.Show();
+        }
+
+        private void funcionáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Movimentacoes.FrmHospedes form = new Movimentacoes.FrmHospedes();
+            form.Show();
+        }
+
+        private void quartosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Movimentacoes.FrmQuartos form = new Movimentacoes.FrmQuartos();
+            form.Show();
+        }
+
+        private void novaServiçosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Movimentacoes.FrmNovoServics form = new Movimentacoes.FrmNovoServics();
+            form.Show();
+        }
     }
 }

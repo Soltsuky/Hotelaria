@@ -18,6 +18,7 @@ namespace Hotelaria.Produtos
         string sql;
         SqlCommand cmd;
         string id;
+        string ultimoIdGasto;
 
         public FrmEstoque()
         {
@@ -127,7 +128,62 @@ namespace Hotelaria.Produtos
             con.FecharCon();
 
             MessageBox.Show("Lançamento Feito com Sucesso!", "Dados Editados", MessageBoxButtons.OK, MessageBoxIcon.Information);
-           
+
+
+
+
+
+            //LANÇAR O VALOR DO PEDIDO NOS GASTOS
+            con.AbrirCon();
+            sql = "INSERT INTO gastos (descricao, valor, funcionario, data) VALUES (@descricao, @valor, @funcionario, GETDATE())";
+            cmd = new SqlCommand(sql, con.con);
+
+            cmd.Parameters.AddWithValue("@descricao", "Compra de Produtos");
+
+            cmd.Parameters.AddWithValue("@valor", Convert.ToDouble(txtValor.Text) * Convert.ToDouble(txtQuantidade.Text));
+            cmd.Parameters.AddWithValue("@funcionario", Program.nomeUsuario);
+
+
+
+            cmd.ExecuteNonQuery();
+            con.FecharCon();
+
+
+            //RECUPERAR O ULTIMO ID DO GASTO
+            SqlCommand cmdVerificar;
+            SqlDataReader reader;
+            con.AbrirCon();
+            cmdVerificar = new SqlCommand("SELECT TOP 1 id FROM gastos order by id desc ", con.con);
+
+            reader = cmdVerificar.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                //EXTRAINDO INFORMAÇÕES DA CONSULTA DO LOGIN
+                while (reader.Read())
+                {
+                    ultimoIdGasto = Convert.ToString(reader["id"]);
+
+
+
+
+                }
+            }
+
+            //LANÇAR O VALOR DO PEDIDO NAS MOVIMENTAÇÕES
+            con.AbrirCon();
+            sql = "INSERT INTO movimentacoes (tipo, movimento, valor, funcionario, data, id_movimento) VALUES (@tipo, @movimento, @valor, @funcionario, GETDATE(), @id_movimento)";
+            cmd = new SqlCommand(sql, con.con);
+
+            cmd.Parameters.AddWithValue("@tipo", "Saída");
+            cmd.Parameters.AddWithValue("@movimento", "Gasto");
+            cmd.Parameters.AddWithValue("@valor", Convert.ToDouble(txtValor.Text) * Convert.ToDouble(txtQuantidade.Text));
+            cmd.Parameters.AddWithValue("@funcionario", Program.nomeUsuario);
+            cmd.Parameters.AddWithValue("@id_movimento", ultimoIdGasto);
+
+            cmd.ExecuteNonQuery();
+            con.FecharCon();
+
             limparCampos();
             desabilitarCampos();
         }

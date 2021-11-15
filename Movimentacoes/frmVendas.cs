@@ -218,6 +218,9 @@ namespace Hotelaria.Movimentacoes
             cmd.ExecuteNonQuery();
             con.FecharCon();
 
+            
+
+
             //RECUPERAR O ULTIMA ID DA VENDA
             SqlCommand cmdVerificar;
             SqlDataReader reader;
@@ -233,12 +236,25 @@ namespace Hotelaria.Movimentacoes
                 {
                     ultimoIdVenda = Convert.ToString(reader["id"]);
 
-                    MessageBox.Show(ultimoIdVenda);
+                  //  MessageBox.Show(ultimoIdVenda);
 
 
                 }
             }
 
+            //SALVAR VENDA NA TABELA DE MOVIMENTAÇÕES
+            con.AbrirCon();
+            sql = "INSERT INTO movimentacoes (tipo, movimento, valor, funcionario, data, id_movimento) VALUES (@tipo, @movimento, @valor, @funcionario, GETDATE(), @id_movimento)";
+            cmd = new SqlCommand(sql, con.con);
+
+            cmd.Parameters.AddWithValue("@tipo", "Entrada");
+            cmd.Parameters.AddWithValue("@movimento", "Venda");
+            cmd.Parameters.AddWithValue("@valor", Convert.ToDouble(totalVenda));
+            cmd.Parameters.AddWithValue("@funcionario", Program.nomeUsuario);
+            cmd.Parameters.AddWithValue("@id_movimento", ultimoIdVenda);
+
+            cmd.ExecuteNonQuery();
+            con.FecharCon();
 
             //RELACIONAR OS ITENS COM A VENDA
             con.AbrirCon();
@@ -290,6 +306,16 @@ namespace Hotelaria.Movimentacoes
                     totalVenda = "0";
                     exclusaoVenda = "";
                     btnFechar.Visible = false;
+
+                    //EXCLUSAO DO MOVIMENTO DA VENDA
+                    con.AbrirCon();
+                    sql = "DELETE FROM movimentacoes where id_movimento = @id and movimento = @movimento";
+                    cmd = new SqlCommand(sql, con.con);
+
+                    cmd.Parameters.AddWithValue("@id", idVenda);
+                    cmd.Parameters.AddWithValue("@movimento", "Venda");
+                    cmd.ExecuteNonQuery();
+                    con.FecharCon();
                 }
             }
             else

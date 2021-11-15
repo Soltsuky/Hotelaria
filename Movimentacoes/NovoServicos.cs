@@ -206,7 +206,7 @@ namespace Hotelaria.Movimentacoes
 
             //CÓDIGO DO BOTÃO PARA SALVAR
             con.AbrirCon();
-            sql = "INSERT INTO novo_servico (hospede, servico, quarto, valor, funcionario, data) VALUES (@hospede, @servico, @quarto, @valor, @funcionario, curDate())";
+            sql = "INSERT INTO novo_servico (hospede, servico, quarto, valor, funcionario, data) VALUES (@hospede, @servico, @quarto, @valor, @funcionario, GETDATE())";
             cmd = new SqlCommand(sql, con.con);
             cmd.Parameters.AddWithValue("@hospede", txtNome.Text);
             cmd.Parameters.AddWithValue("@servico", cbServico.Text);
@@ -228,7 +228,7 @@ namespace Hotelaria.Movimentacoes
             SqlCommand cmdVerificar;
             SqlDataReader reader;
             con.AbrirCon();
-            cmdVerificar = new SqlCommand("SELECT id FROM novo_servico order by id desc LIMIT 1", con.con);
+            cmdVerificar = new SqlCommand("SELECT TOP 1 id FROM novo_servico order by id desc", con.con);
 
             reader = cmdVerificar.ExecuteReader();
 
@@ -249,7 +249,7 @@ namespace Hotelaria.Movimentacoes
 
             //SALVAR VENDA NA TABELA DE MOVIMENTAÇÕES
             con.AbrirCon();
-            sql = "INSERT INTO movimentacoes (tipo, movimento, valor, funcionario, data, id_movimento) VALUES (@tipo, @movimento, @valor, @funcionario, curDate(), @id_movimento)";
+            sql = "INSERT INTO movimentacoes (tipo, movimento, valor, funcionario, data, id_movimento) VALUES (@tipo, @movimento, @valor, @funcionario, GETDATE(), @id_movimento)";
             cmd = new SqlCommand(sql, con.con);
 
             cmd.Parameters.AddWithValue("@tipo", "Entrada");
@@ -276,7 +276,7 @@ namespace Hotelaria.Movimentacoes
         private void BtnHospede_Click(object sender, EventArgs e)
         {
             Program.chamadaHospedes = "hospedes";
-            Cadastros.FrmHospedes form = new Cadastros.FrmHospedes();
+            Movimentacoes.FrmHospedes form = new Movimentacoes.FrmHospedes();
             form.Show();
         }
 
@@ -373,8 +373,8 @@ namespace Hotelaria.Movimentacoes
         private void BtnRel_Click(object sender, EventArgs e)
         {
             BtnRel.Enabled = false;
-          //  Relatorios.FrmRelComprovanteServico form = new Relatorios.FrmRelComprovanteServico();
-          //  form.Show();
+            Relatorios.frmRelComprovanteServico form = new Relatorios.frmRelComprovanteServico();
+            form.Show();
             
         }
     }

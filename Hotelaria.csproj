@@ -168,6 +168,12 @@
     <Compile Include="Relatorios\frmRelComprovante.Designer.cs">
       <DependentUpon>frmRelComprovante.cs</DependentUpon>
     </Compile>
+    <Compile Include="Relatorios\frmRelComprovanteServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\frmRelComprovanteServico.Designer.cs">
+      <DependentUpon>frmRelComprovanteServico.cs</DependentUpon>
+    </Compile>
     <Compile Include="Relatorios\frmRelProdutos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,6 +245,9 @@
     <EmbeddedResource Include="Relatorios\frmRelComprovante.resx">
       <DependentUpon>frmRelComprovante.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\frmRelComprovanteServico.resx">
+      <DependentUpon>frmRelComprovanteServico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\frmRelProdutos.resx">
       <DependentUpon>frmRelProdutos.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,6 +255,7 @@
       <DependentUpon>frmRelVendas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\RelComprovante.rdlc" />
+    <EmbeddedResource Include="Relatorios\RelComprovanteServico.rdlc" />
     <EmbeddedResource Include="Relatorios\RelProdutos.rdlc" />
     <EmbeddedResource Include="Relatorios\RelVendas.rdlc" />
     <None Include="HotelDataSet.xsc">

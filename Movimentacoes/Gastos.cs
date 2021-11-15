@@ -108,6 +108,7 @@ namespace Hotelaria.Movimentacoes
 
         private void FrmGastos_Load(object sender, EventArgs e)
         {
+            dtBuscar.Value = DateTime.Today;
             Listar();
         }
 
@@ -161,7 +162,7 @@ namespace Hotelaria.Movimentacoes
             SqlCommand cmdVerificar;
             SqlDataReader reader;
             con.AbrirCon();
-            cmdVerificar = new SqlCommand("SELECT id FROM gastos order by id desc LIMIT 1", con.con);
+            cmdVerificar = new SqlCommand("SELECT TOP 1 id FROM gastos order by id desc", con.con);
 
             reader = cmdVerificar.ExecuteReader();
 
@@ -183,7 +184,7 @@ namespace Hotelaria.Movimentacoes
 
             //LANÇAR O GASTO NAS MOVIMENTAÇÕES
             con.AbrirCon();
-            sql = "INSERT INTO movimentacoes (tipo, movimento, valor, funcionario, data, id_movimento) VALUES (@tipo, @movimento, @valor, @funcionario, curDate(), @id_movimento)";
+            sql = "INSERT INTO movimentacoes (tipo, movimento, valor, funcionario, data, id_movimento) VALUES (@tipo, @movimento, @valor, @funcionario, GETDATE(), @id_movimento)";
             cmd = new SqlCommand(sql, con.con);
 
             cmd.Parameters.AddWithValue("@tipo", "Saída");

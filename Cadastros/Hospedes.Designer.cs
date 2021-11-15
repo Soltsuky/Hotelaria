@@ -53,7 +53,7 @@
             // rbCPF
             // 
             this.rbCPF.AutoSize = true;
-            this.rbCPF.Location = new System.Drawing.Point(345, 24);
+            this.rbCPF.Location = new System.Drawing.Point(345, 14);
             this.rbCPF.Name = "rbCPF";
             this.rbCPF.Size = new System.Drawing.Size(45, 17);
             this.rbCPF.TabIndex = 83;
@@ -65,7 +65,7 @@
             // rbNome
             // 
             this.rbNome.AutoSize = true;
-            this.rbNome.Location = new System.Drawing.Point(278, 24);
+            this.rbNome.Location = new System.Drawing.Point(278, 14);
             this.rbNome.Name = "rbNome";
             this.rbNome.Size = new System.Drawing.Size(53, 17);
             this.rbNome.TabIndex = 82;
@@ -76,7 +76,7 @@
             // 
             // txtBuscarCPF
             // 
-            this.txtBuscarCPF.Location = new System.Drawing.Point(440, 22);
+            this.txtBuscarCPF.Location = new System.Drawing.Point(440, 12);
             this.txtBuscarCPF.Mask = "000,000,000-00";
             this.txtBuscarCPF.Name = "txtBuscarCPF";
             this.txtBuscarCPF.Size = new System.Drawing.Size(115, 20);
@@ -172,7 +172,7 @@
             // 
             // txtBuscarNome
             // 
-            this.txtBuscarNome.Location = new System.Drawing.Point(440, 22);
+            this.txtBuscarNome.Location = new System.Drawing.Point(440, 12);
             this.txtBuscarNome.Name = "txtBuscarNome";
             this.txtBuscarNome.Size = new System.Drawing.Size(115, 20);
             this.txtBuscarNome.TabIndex = 74;
@@ -181,7 +181,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(225, 25);
+            this.label1.Location = new System.Drawing.Point(225, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 68;
@@ -250,8 +250,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(582, 443);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(574, 443);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnSalvar);
@@ -270,6 +272,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtBuscarNome);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FrmHospedes";

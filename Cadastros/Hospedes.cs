@@ -181,7 +181,7 @@ namespace Hotelaria.Movimentacoes
 
             //CÓDIGO DO BOTÃO PARA SALVAR
             con.AbrirCon();
-            sql = "INSERT INTO hospedes (nome, cpf, endereco, telefone, funcionario, data) VALUES (@nome, @cpf, @endereco, @telefone, @funcionario, curDate())";
+            sql = "INSERT INTO hospedes (nome, cpf, endereco, telefone, funcionario, data) VALUES (@nome, @cpf, @endereco, @telefone, @funcionario, GETDATE())";
             cmd = new SqlCommand(sql, con.con);
             cmd.Parameters.AddWithValue("@nome", txtNome.Text);
             cmd.Parameters.AddWithValue("@cpf", txtCPF.Text);

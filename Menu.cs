@@ -125,5 +125,29 @@ namespace Hotelaria
             Movimentacoes.FrmNovoServics form = new Movimentacoes.FrmNovoServics();
             form.Show();
         }
+
+        private void relatórioDeServiçosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Relatorios.frmRelServicos form = new Relatorios.frmRelServicos();
+            form.Show();
+        }
+
+        private void relatórioDeVendasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Relatorios.frmRelVendas form = new Relatorios.frmRelVendas();
+            form.Show();
+        }
+
+        private void relatirioDeEntradaSaídaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Relatorios.frmRelMovimentacoes form = new Relatorios.frmRelMovimentacoes();
+            form.Show();
+        }
+
+        private void relatórioDeMovimentaçõesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Relatorios.frmMovimentacoesGerais form = new Relatorios.frmMovimentacoesGerais();
+            form.Show();
+        }
     }
 }

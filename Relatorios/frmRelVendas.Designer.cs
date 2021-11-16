@@ -30,7 +30,9 @@ namespace Hotelaria.Relatorios
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.vendasPorDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hotelDataSet = new Hotelaria.HotelDataSet();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dtInicial = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,19 +41,27 @@ namespace Hotelaria.Relatorios
             this.cbStatus = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.vendasPorDataBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.hotelDataSet = new Hotelaria.HotelDataSet();
-            this.vendasPorDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vendasPorDataTableAdapter = new Hotelaria.HotelDataSetTableAdapters.vendasPorDataTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.vendasPorDataBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendasPorDataBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendasPorDataBindingSource1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // vendasPorDataBindingSource
+            // 
+            this.vendasPorDataBindingSource.DataMember = "vendasPorData";
+            this.vendasPorDataBindingSource.DataSource = this.hotelDataSet;
+            // 
+            // hotelDataSet
+            // 
+            this.hotelDataSet.DataSetName = "HotelDataSet";
+            this.hotelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
-            reportDataSource1.Name = "DSVendasData";
-            reportDataSource1.Value = this.vendasPorDataBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "DSVendasData";
+            reportDataSource2.Value = this.vendasPorDataBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Hotelaria.Relatorios.RelVendas.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(-1, 46);
             this.reportViewer1.Name = "reportViewer1";
@@ -66,6 +76,7 @@ namespace Hotelaria.Relatorios
             this.dtInicial.Name = "dtInicial";
             this.dtInicial.Size = new System.Drawing.Size(85, 20);
             this.dtInicial.TabIndex = 113;
+            this.dtInicial.ValueChanged += new System.EventHandler(this.dtInicial_ValueChanged_1);
             // 
             // label3
             // 
@@ -83,6 +94,7 @@ namespace Hotelaria.Relatorios
             this.dtFinal.Name = "dtFinal";
             this.dtFinal.Size = new System.Drawing.Size(85, 20);
             this.dtFinal.TabIndex = 115;
+            this.dtFinal.ValueChanged += new System.EventHandler(this.dtFinal_ValueChanged);
             // 
             // label1
             // 
@@ -118,16 +130,6 @@ namespace Hotelaria.Relatorios
             this.vendasPorDataBindingSource1.DataMember = "vendasPorData";
             this.vendasPorDataBindingSource1.DataSource = this.hotelDataSet;
             // 
-            // hotelDataSet
-            // 
-            this.hotelDataSet.DataSetName = "HotelDataSet";
-            this.hotelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vendasPorDataBindingSource
-            // 
-            this.vendasPorDataBindingSource.DataMember = "vendasPorData";
-            this.vendasPorDataBindingSource.DataSource = this.hotelDataSet;
-            // 
             // vendasPorDataTableAdapter
             // 
             this.vendasPorDataTableAdapter.ClearBeforeFill = true;
@@ -148,9 +150,9 @@ namespace Hotelaria.Relatorios
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Relatório de Vendas";
             this.Load += new System.EventHandler(this.frmRelVendas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.vendasPorDataBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendasPorDataBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendasPorDataBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

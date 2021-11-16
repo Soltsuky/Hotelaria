@@ -162,6 +162,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relatorios\frmMovimentacoesGerais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\frmMovimentacoesGerais.Designer.cs">
+      <DependentUpon>frmMovimentacoesGerais.cs</DependentUpon>
+    </Compile>
     <Compile Include="Relatorios\frmRelComprovante.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,11 +180,23 @@
     <Compile Include="Relatorios\frmRelComprovanteServico.Designer.cs">
       <DependentUpon>frmRelComprovanteServico.cs</DependentUpon>
     </Compile>
+    <Compile Include="Relatorios\frmRelMovimentacoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\frmRelMovimentacoes.Designer.cs">
+      <DependentUpon>frmRelMovimentacoes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Relatorios\frmRelProdutos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Relatorios\frmRelProdutos.Designer.cs">
       <DependentUpon>frmRelProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\frmRelServicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\frmRelServicos.Designer.cs">
+      <DependentUpon>frmRelServicos.cs</DependentUpon>
     </Compile>
     <Compile Include="Relatorios\frmRelVendas.cs">
       <SubType>Form</SubType>
@@ -242,21 +260,33 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Relatorios\frmMovimentacoesGerais.resx">
+      <DependentUpon>frmMovimentacoesGerais.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\frmRelComprovante.resx">
       <DependentUpon>frmRelComprovante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\frmRelComprovanteServico.resx">
       <DependentUpon>frmRelComprovanteServico.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\frmRelMovimentacoes.resx">
+      <DependentUpon>frmRelMovimentacoes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\frmRelProdutos.resx">
       <DependentUpon>frmRelProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\frmRelServicos.resx">
+      <DependentUpon>frmRelServicos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\frmRelVendas.resx">
       <DependentUpon>frmRelVendas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\RelComprovante.rdlc" />
     <EmbeddedResource Include="Relatorios\RelComprovanteServico.rdlc" />
+    <EmbeddedResource Include="Relatorios\RelMovimentacoes.rdlc" />
+    <EmbeddedResource Include="Relatorios\RelMovimentacoesGerais.rdlc" />
     <EmbeddedResource Include="Relatorios\RelProdutos.rdlc" />
+    <EmbeddedResource Include="Relatorios\RelServicos.rdlc" />
     <EmbeddedResource Include="Relatorios\RelVendas.rdlc" />
     <None Include="HotelDataSet.xsc">
       <DependentUpon>HotelDataSet.xsd</DependentUpon>

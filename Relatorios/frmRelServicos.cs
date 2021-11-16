@@ -10,51 +10,36 @@ using System.Windows.Forms;
 
 namespace Hotelaria.Relatorios
 {
-    public partial class frmRelVendas : Form
+    public partial class frmRelServicos : Form
     {
-        public frmRelVendas()
+        public frmRelServicos()
         {
             InitializeComponent();
         }
 
-        private void frmRelVendas_Load(object sender, EventArgs e)
+        private void frmRelServicos_Load(object sender, EventArgs e)
         {
-
-
 
             dtInicial.Value = DateTime.Today;
             dtFinal.Value = DateTime.Today;
-            cbStatus.SelectedIndex = 0;
-            BuscarData();
-
+            BuscarPorData();
         }
-
-        private void BuscarData()
+        private void BuscarPorData()
         {
-
-            this.vendasPorDataTableAdapter.Fill(this.hotelDataSet.vendasPorData, Convert.ToString(dtInicial.Text), Convert.ToString(dtFinal.Text), cbStatus.Text);
-
+            this.servicoPorDataTableAdapter.Fill(this.hotelDataSet.servicoPorData, Convert.ToString(dtInicial.Text), Convert.ToString(dtFinal.Text));
             this.reportViewer1.LocalReport.SetParameters(new Microsoft.Reporting.WinForms.ReportParameter("dataInicial", dtInicial.Text));
             this.reportViewer1.LocalReport.SetParameters(new Microsoft.Reporting.WinForms.ReportParameter("dataFinal", dtFinal.Text));
-
-
             this.reportViewer1.RefreshReport();
         }
 
-
-        private void dtInicial_ValueChanged_1(object sender, EventArgs e)
+        private void dtInicial_ValueChanged(object sender, EventArgs e)
         {
-            BuscarData();
+            BuscarPorData();
         }
 
         private void dtFinal_ValueChanged(object sender, EventArgs e)
         {
-            BuscarData();
-        }
-
-        private void cbStatus_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            BuscarData();
+            BuscarPorData();
         }
     }
 }

@@ -10,21 +10,18 @@ using System.Windows.Forms;
 
 namespace Hotelaria.Relatorios
 {
-    public partial class frmRelVendas : Form
+    public partial class frmRelMovimentacoes : Form
     {
-        public frmRelVendas()
+        public frmRelMovimentacoes()
         {
             InitializeComponent();
         }
 
-        private void frmRelVendas_Load(object sender, EventArgs e)
+        private void frmRelMovimentacoes_Load(object sender, EventArgs e)
         {
-
-
-
             dtInicial.Value = DateTime.Today;
             dtFinal.Value = DateTime.Today;
-            cbStatus.SelectedIndex = 0;
+            cbTipo.SelectedIndex = 0;
             BuscarData();
 
         }
@@ -32,17 +29,17 @@ namespace Hotelaria.Relatorios
         private void BuscarData()
         {
 
-            this.vendasPorDataTableAdapter.Fill(this.hotelDataSet.vendasPorData, Convert.ToString(dtInicial.Text), Convert.ToString(dtFinal.Text), cbStatus.Text);
+            this.movimentacoesPorDataTableAdapter.Fill(this.hotelDataSet.movimentacoesPorData, Convert.ToString(dtInicial.Text), Convert.ToString(dtFinal.Text), cbTipo.Text);
 
             this.reportViewer1.LocalReport.SetParameters(new Microsoft.Reporting.WinForms.ReportParameter("dataInicial", dtInicial.Text));
             this.reportViewer1.LocalReport.SetParameters(new Microsoft.Reporting.WinForms.ReportParameter("dataFinal", dtFinal.Text));
+            this.reportViewer1.LocalReport.SetParameters(new Microsoft.Reporting.WinForms.ReportParameter("tipo", cbTipo.Text));
 
 
             this.reportViewer1.RefreshReport();
         }
 
-
-        private void dtInicial_ValueChanged_1(object sender, EventArgs e)
+        private void dtInicial_ValueChanged(object sender, EventArgs e)
         {
             BuscarData();
         }
@@ -52,7 +49,7 @@ namespace Hotelaria.Relatorios
             BuscarData();
         }
 
-        private void cbStatus_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbTipo_SelectedIndexChanged(object sender, EventArgs e)
         {
             BuscarData();
         }

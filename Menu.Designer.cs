@@ -59,6 +59,7 @@ namespace Hotelaria
             this.relatórioDeServiçosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatórioDeVendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatirioDeEntradaSaídaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.relatórioDeMovimentaçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlTop = new System.Windows.Forms.Panel();
@@ -82,7 +83,6 @@ namespace Hotelaria
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.relatórioDeMovimentaçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnlTop.SuspendLayout();
             this.pnlRight.SuspendLayout();
@@ -185,6 +185,7 @@ namespace Hotelaria
             this.novaReservaToolStripMenuItem.Name = "novaReservaToolStripMenuItem";
             this.novaReservaToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.novaReservaToolStripMenuItem.Text = "Nova Reserva";
+            this.novaReservaToolStripMenuItem.Click += new System.EventHandler(this.novaReservaToolStripMenuItem_Click);
             // 
             // quadoDeReservaToolStripMenuItem
             // 
@@ -195,8 +196,9 @@ namespace Hotelaria
             // consultarReservasToolStripMenuItem
             // 
             this.consultarReservasToolStripMenuItem.Name = "consultarReservasToolStripMenuItem";
-            this.consultarReservasToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.consultarReservasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.consultarReservasToolStripMenuItem.Text = "Consultar Reservas";
+            this.consultarReservasToolStripMenuItem.Click += new System.EventHandler(this.consultarReservasToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -275,14 +277,16 @@ namespace Hotelaria
             // checkInToolStripMenuItem
             // 
             this.checkInToolStripMenuItem.Name = "checkInToolStripMenuItem";
-            this.checkInToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.checkInToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.checkInToolStripMenuItem.Text = "Check In";
+            this.checkInToolStripMenuItem.Click += new System.EventHandler(this.checkInToolStripMenuItem_Click);
             // 
             // checkOutToolStripMenuItem
             // 
             this.checkOutToolStripMenuItem.Name = "checkOutToolStripMenuItem";
-            this.checkOutToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.checkOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.checkOutToolStripMenuItem.Text = "Check Out";
+            this.checkOutToolStripMenuItem.Click += new System.EventHandler(this.checkOutToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
@@ -324,6 +328,13 @@ namespace Hotelaria
             this.relatirioDeEntradaSaídaToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.relatirioDeEntradaSaídaToolStripMenuItem.Text = "Relatório de Entrada/Saída";
             this.relatirioDeEntradaSaídaToolStripMenuItem.Click += new System.EventHandler(this.relatirioDeEntradaSaídaToolStripMenuItem_Click);
+            // 
+            // relatórioDeMovimentaçõesToolStripMenuItem
+            // 
+            this.relatórioDeMovimentaçõesToolStripMenuItem.Name = "relatórioDeMovimentaçõesToolStripMenuItem";
+            this.relatórioDeMovimentaçõesToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.relatórioDeMovimentaçõesToolStripMenuItem.Text = "Relatório de Movimentações";
+            this.relatórioDeMovimentaçõesToolStripMenuItem.Click += new System.EventHandler(this.relatórioDeMovimentaçõesToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem1
             // 
@@ -584,13 +595,6 @@ namespace Hotelaria
             this.label1.Size = new System.Drawing.Size(44, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Data:";
-            // 
-            // relatórioDeMovimentaçõesToolStripMenuItem
-            // 
-            this.relatórioDeMovimentaçõesToolStripMenuItem.Name = "relatórioDeMovimentaçõesToolStripMenuItem";
-            this.relatórioDeMovimentaçõesToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
-            this.relatórioDeMovimentaçõesToolStripMenuItem.Text = "Relatório de Movimentações";
-            this.relatórioDeMovimentaçõesToolStripMenuItem.Click += new System.EventHandler(this.relatórioDeMovimentaçõesToolStripMenuItem_Click);
             // 
             // frmMenu
             // 

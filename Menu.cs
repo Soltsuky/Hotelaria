@@ -149,5 +149,29 @@ namespace Hotelaria
             Relatorios.frmMovimentacoesGerais form = new Relatorios.frmMovimentacoesGerais();
             form.Show();
         }
+
+        private void novaReservaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+          Cadastros.FrmReservas form = new Cadastros.FrmReservas();
+          form.Show();
+        }
+
+        private void checkInToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Cadastros.FrmCheckIn form = new Cadastros.FrmCheckIn();
+            form.Show();
+        }
+
+        private void checkOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Cadastros.FrmCheckOut form = new Cadastros.FrmCheckOut();
+            form.Show();
+        }
+
+        private void consultarReservasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Cadastros.FrmConsultarReservas form = new Cadastros.FrmConsultarReservas();
+            form.Show();
+        }
     }
 }

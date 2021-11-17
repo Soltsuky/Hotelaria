@@ -27,6 +27,7 @@ namespace Hotelaria
         public static string nomeHospede;
 
         public static string idNovoServico;
+        public static string idReserva;
 
 
         /// <summary>

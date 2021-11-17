@@ -204,6 +204,30 @@
     <Compile Include="Relatorios\frmRelVendas.Designer.cs">
       <DependentUpon>frmRelVendas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reservas\FrmCheckIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservas\FrmCheckIn.designer.cs">
+      <DependentUpon>FrmCheckIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservas\FrmCheckOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservas\FrmCheckOut.designer.cs">
+      <DependentUpon>FrmCheckOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservas\FrmConsultarReservas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservas\FrmConsultarReservas.designer.cs">
+      <DependentUpon>FrmConsultarReservas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservas\FrmReservas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservas\FrmReservas.designer.cs">
+      <DependentUpon>FrmReservas.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Cadastros\Cargo.resx">
       <DependentUpon>Cargo.cs</DependentUpon>
@@ -288,6 +312,18 @@
     <EmbeddedResource Include="Relatorios\RelProdutos.rdlc" />
     <EmbeddedResource Include="Relatorios\RelServicos.rdlc" />
     <EmbeddedResource Include="Relatorios\RelVendas.rdlc" />
+    <EmbeddedResource Include="Reservas\FrmCheckIn.resx">
+      <DependentUpon>FrmCheckIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservas\FrmCheckOut.resx">
+      <DependentUpon>FrmCheckOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservas\FrmConsultarReservas.resx">
+      <DependentUpon>FrmConsultarReservas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservas\FrmReservas.resx">
+      <DependentUpon>FrmReservas.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="HotelDataSet.xsc">
       <DependentUpon>HotelDataSet.xsd</DependentUpon>
     </None>

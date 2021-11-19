@@ -351,6 +351,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\img\sem-foto.jpg" />
+    <Content Include="b2.jpg" />
     <Content Include="Resources\sem-foto.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
